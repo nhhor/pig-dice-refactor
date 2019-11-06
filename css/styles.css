@@ -1,0 +1,28 @@
+.container {
+  text-align: center;
+}
+
+.col-lg-5 {
+  border: solid 1px;
+  border-radius: 100%;
+}
+
+.player1 {
+  background-color: red;
+  }
+
+.player2 {
+  background-color: blue;
+  color: white;
+  /* display: none; */
+}
+
+.buttons {
+  text-align: left;
+  transition:all 1s;
+}
+
+.buttons2 {
+  text-align: right;
+  transition:all 1s;
+}

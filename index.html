@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <script src="js/jquery-3.4.1.js" charset="utf-8"></script>
+  <script src="js/scripts.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Pig-Dice</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Pig-Dice</h1>
+        <p><a href="../pig-dice-refactor/index.html"><button type="button" id="newGame" class="btn btn-primary">New Game</button></a></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-5 playera player1">
+        <h4>Player One:</h4>
+        <p>Score: <span id="playerOneScore"></span></p>
+      </div>
+      <div class="col-lg-2">
+
+      </div>
+      <div class="col-lg-5 playerb">
+        <h4>Player Two:</h4>
+        <p>Score: <span id="playerTwoScore"></span></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="buttons"><button type="button" id="rollDice" class="btn btn-danger">Roll again!</button></p>
+        <p class="buttons">Count: <span class="diceCount"></span></p>
+        <p class="buttons"><button type="button" id="holdDice" class="btn btn-warning">HOLD!</button></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
