@@ -7,7 +7,14 @@ body{
   text-align: center;
 }
 
-.col-lg-5 {
+.pigFace {
+  background-image: url("../img/pignose.png");
+  background-repeat: no-repeat;
+  background-position: left 50% bottom 70%;
+  background-size: 60%;
+}
+
+.playera, .playerb {
   border: double 10px;
   border-radius: 100%;
   padding: 20px;
@@ -36,4 +43,8 @@ body{
   background-color: white;
   border-radius: 100%;
   text-align: center;
+}
+
+.buttonRow {
+  margin-top: 16%;
 }
