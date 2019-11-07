@@ -45,36 +45,42 @@ var pigDice = new PigDice();
 function switchTurn(){
   $('.playera').toggleClass("player1");
   $('.playerb').toggleClass("player2");
-  $('.buttons').toggleClass("buttons2");
+  $('.buttons').toggleClass("buttons2").animate({
+    height: "-120%"
+  }, 500).animate({
+    height: "20%"
+  }, 750);
+  $("#rollDice").animate({
+    left: 100
+  }, 500);
   $("#playerOneScore").text(pigDice.playerOneScore);
   $("#playerTwoScore").text(pigDice.playerTwoScore);
 }
+
+PigDice.prototype.winner = function(){
+  this.turnCounter +=1;
+  $(".diceCount").text("");
+  diceRun = 0
+  this.playerTwoScore = 0;
+  this.playerOneScore = 0;
+  this.turnCounter = 0;
+  this.switchMod();
+  $("#playerOneScore").text("");
+  $("#playerTwoScore").text("");
+};
 
 $(document).ready(function() {
 
   $("#rollDice").click(function() {
     var diceCount = Math.round(Math.random() * 5)+1
-    $(".diceCount").append(diceCount, ", ")
+    $(".diceCount").append(" | "+diceCount+" | ")
     pigDice.addDice(diceCount);
   });
 
   $('#holdDice').click(function(){
-
     pigDice.switchMod();
     diceRun = 0;
     $(".diceCount").text("");
-
-    PigDice.prototype.winner = function(){
-      this.turnCounter +=1;
-      $(".diceCount").text("");
-      diceRun = 0
-      this.playerTwoScore = 0;
-      this.playerOneScore = 0;
-      this.turnCounter = 0;
-      this.switchMod();
-      $("#playerOneScore").text("");
-      $("#playerTwoScore").text("");
-      };
 
     if(pigDice.playerOneScore >= 100){
       alert("Player1 Wins!");
