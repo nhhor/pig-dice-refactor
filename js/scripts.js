@@ -7,6 +7,8 @@ function PigDice() {
   this.playerTwoScore = 0
 }
 
+var pvp = false;
+
 var diceRun = 0;
 
 PigDice.prototype.switchMod = function(){
@@ -16,21 +18,46 @@ PigDice.prototype.switchMod = function(){
     case 0:
     var playerOneScore = this.playerOneScore += diceRun;
     switchTurn()
+
+    if (pvp === false){
+      cpu()
+          }
+    else {
+      console.log("hmmm");
+    }
+
     break;
     default:
-    var playerTwoScore = this.playerTwoScore += diceRun;
+        var playerTwoScore = this.playerTwoScore += diceRun;
     switchTurn()
-  }
+    }
+  console.log(pigDice);
   this.turnCounter +=1;
+}
+
+function cpu() {
+  var diceCount = Math.round(Math.random() * 5)+1
+  if(diceCount === 1){
+    pigDice.turnCounter +=1;
+    switchTurn();
+  }
+
+  var playerTwoScore = pigDice.playerTwoScore += diceCount;
+  console.log("Dice Count", diceCount);
+  pigDice.turnCounter +=1;
+  switchTurn();
 }
 
 PigDice.prototype.addDice = function(diceCount){
   if(diceCount === 1){
-    switchTurn()
-    this.turnCounter +=1;
-    diceRun = 0;
-    alert("You rolled a 1, Turn over!")
-    $(".diceCount").text("")
+    if(pvp === false){
+      switchTurn()
+      this.turnCounter +=2;
+      diceRun = 0;
+      alert("You rolled a 1, Turn over!")
+      $(".diceCount").text("")
+
+    }
 
   }
   else {
