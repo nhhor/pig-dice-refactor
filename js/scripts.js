@@ -7,7 +7,7 @@ function PigDice() {
   this.playerTwoScore = 0
 }
 
-var pvp = false;
+var pvp = true;
 
 var diceRun = 0;
 
@@ -50,15 +50,11 @@ function cpu() {
 
 PigDice.prototype.addDice = function(diceCount){
   if(diceCount === 1){
-    if(pvp === false){
       switchTurn()
-      this.turnCounter +=2;
+      this.turnCounter +=1;
       diceRun = 0;
       alert("You rolled a 1, Turn over!")
       $(".diceCount").text("")
-
-    }
-
   }
   else {
     diceRun += diceCount;
